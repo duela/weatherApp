@@ -37,17 +37,18 @@ app.post("/", function(req,res){
       var iconId = weatherData.weather[0].icon;
       var iconUrl = 'https://api.openweathermap.org/img/w/' + iconId + '.png';
       //  var imgSrc = 'src=' + iconUrl + "''";
+      //
+      // $(".weather-icon").attr("src", iconUrl);
+      // $(".city-name").text(name);
+      // $(".city-time").text("15:00");
+      // $(".city-temperature").text(nameTemp + "°C");
+      // $(".city-weather-description").text(cityDescription);
+      // $(".city-wind-speed").text(windSpeed + "km/h");
+      // $(".city-wind-humidity").text(windHumidity + "%");
+      // $(".city-pressure").text(pressure + " hPa");
 
-      $(".weather-icon").attr("src", iconUrl);
-      $(".city-name").text(name);
-      $(".city-time").text("15:00");
-      $(".city-temperature").text(nameTemp + "°C");
-      $(".city-weather-description").text(cityDescription);
-      $(".city-wind-speed").text(windSpeed + "km/h");
-      $(".city-wind-humidity").text(windHumidity + "%");
-      $(".city-pressure").text(pressure + " hPa");
+      res.send("It is currently " + nameTemp + "°C in " + name);
 
-      res.sendFile(__dirname + "/index.html");
 
 
       //document.querySelectorAll(".wicon")[0].setAttribute("src",iconUrl);
